@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 96%;
+    --foreground: 30 10% 10%;
+
+    --card: 40 15% 99%;
+    --card-foreground: 30 10% 10%;
+
+    --popover: 40 15% 99%;
+    --popover-foreground: 30 10% 10%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 45 20% 94%;
+    --secondary-foreground: 45 40% 10%;
+
+    --muted: 45 15% 93%;
+    --muted-foreground: 45 10% 45%;
+
+    --accent: 45 30% 90%;
+    --accent-foreground: 45 60% 35%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 15% 88%;
+    --input: 45 15% 88%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 45 15% 97%;
+    --sidebar-foreground: 45 10% 30%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 45 25% 93%;
+    --sidebar-accent-foreground: 45 60% 35%;
+    --sidebar-border: 45 15% 88%;
+    --sidebar-ring: 45 100% 50%;
+
+    /* CrypX-Pro custom tokens - Now Amber */
+    --brand-primary: 45 100% 50%;
+    --brand-primary-light: 45 100% 65%;
+    --brand-primary-dark: 45 100% 40%;
+    --brand-glow: 45 100% 70%;
+    --brand-surface: 45 20% 96%;
+    --brand-gradient-start: 45 100% 50%;
+    --brand-gradient-end: 45 100% 65%;
+
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 45 10% 95%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 45 10% 95%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 45 10% 95%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 45 10% 95%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 45 10% 60%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 45 100% 65%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 45 100% 50%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 45 100% 65%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 45 100% 50%;
+
+    --brand-primary: 45 100% 50%;
+    --brand-primary-light: 45 100% 65%;
+    --brand-primary-dark: 45 100% 40%;
+    --brand-glow: 45 100% 70%;
+    --brand-surface: 0 0% 5%;
+    --brand-gradient-start: 45 100% 50%;
+    --brand-gradient-end: 45 100% 65%;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333333%); }
+  }
+  
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-primary-light)));
+  }
+
+  .bg-gradient-brand {
+    background-image: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-primary-light)));
+  }
+
+  .shadow-brand {
+    box-shadow: 0 8px 32px -8px hsl(var(--brand-primary) / 0.25);
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+}
+
+/* Hero banner animations — play once then hold */
+@keyframes hero-cube-fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-wordmark-fadein {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-slogan-fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted-foreground) / 0.2);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground) / 0.3);
+}
+
+/* ==========================================================================
+   WOT (Web of Trust) Verification Badge Styles
+   ========================================================================== */
+.wot-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background-color: #ffffff !important;
+  padding: 6px 14px 6px 10px !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06), 0px 1px 2px rgba(0, 0, 0, 0.04) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  box-sizing: border-box !important;
+  width: fit-content !important;
+  height: 36px !important;
+}
+
+.dark .wot-badge,
+.wot-badge.dark {
+  background-color: #1e2329 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.wot-badge:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.12) !important;
+}
+
+.wot-badge .wot-logo {
+  background: url('https://static.mywot.com/website_owners_badges/images/wot_logo.svg') no-repeat center / contain !important;
+  width: 44px !important;
+  height: 18px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+.wot-badge .wot-shield {
+  background: url('https://static.mywot.com/website_owners_badges/images/check_arrow.svg') no-repeat center / contain !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+.wot-badge .wot-secured {
+  color: #1e2329 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  font-family: inherit !important;
+}
+
+.dark .wot-badge .wot-secured,
+.wot-badge.dark .wot-secured {
+  color: #ffffff !important;
+}
+
+.wot-badge .wot-vertical {
+  width: 1px !important;
+  height: 16px !important;
+  background: #d3d9de !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+.dark .wot-badge .wot-vertical,
+.wot-badge.dark .wot-vertical {
+  background: #4b5563 !important;
+}
+
+.wot-badge .wot-report {
+  color: #64748b !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  font-family: inherit !important;
+}
+
+.dark .wot-badge .wot-report,
+.wot-badge.dark .wot-report {
+  color: #94a3b8 !important;
+}
+

@@ -1,0 +1,150 @@
+{
+  "id": "/",
+  "name": "CrypX Pro Exchange",
+  "short_name": "CrypX Pro",
+  "description": "Professional-grade cryptocurrency trading platform with real-time analytics and portfolio management.",
+  "lang": "en",
+  "dir": "ltr",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "tabbed",
+    "minimal-ui"
+  ],
+  "orientation": "portrait-primary",
+  "start_url": "/",
+  "scope": "/",
+  "background_color": "#09090b",
+  "theme_color": "#2563EB",
+  "categories": [
+    "finance",
+    "crypto",
+    "trading"
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-maskable-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-256x256.png",
+      "type": "image/png",
+      "sizes": "256x256",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "type": "image/png",
+      "sizes": "384x384",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Market Overview",
+      "short_name": "Markets",
+      "description": "View real-time cryptocurrency prices",
+      "url": "/app/market",
+      "icons": [
+        {
+          "src": "/logo-full.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Quick Trade",
+      "short_name": "Trade",
+      "description": "Execute crypto trades instantly",
+      "url": "/app/spot",
+      "icons": [
+        {
+          "src": "/logo-full.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "share_target": {
+    "action": "/app/spot",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "related_applications": [],
+  "screenshots": [
+    {
+      "src": "/herobanner/Market.png",
+      "type": "image/png",
+      "sizes": "1280x720",
+      "form_factor": "wide",
+      "label": "Market Overview - CrypX Pro"
+    },
+    {
+      "src": "/herobanner/Earn.png",
+      "type": "image/png",
+      "sizes": "1280x720",
+      "form_factor": "wide",
+      "label": "Passive Income Dashboard"
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+crypx",
+      "url": "/app/spot?query=%s"
+    }
+  ]
+}

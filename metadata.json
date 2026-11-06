@@ -1,0 +1,6 @@
+{
+  "name": "CrypX-Pro",
+  "description": "A professional-grade, dark-themed cryptocurrency trading platform with real-time market data, advanced charting, and portfolio management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

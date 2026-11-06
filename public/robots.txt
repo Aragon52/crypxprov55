@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /$
+Allow: /faq
+Allow: /terms
+Allow: /policies
+Disallow: /app/
+Disallow: /app
+Disallow: /auth
+Disallow: /settings
+Disallow: /admin/
+Disallow: /admin
+Disallow: /api/
+
+Sitemap: https://crypxpro.com/sitemap.xml
